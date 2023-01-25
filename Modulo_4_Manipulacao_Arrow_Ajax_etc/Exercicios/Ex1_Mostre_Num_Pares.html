@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 90vh;
+            display: flex;
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: flex-start;    
+        }
+        .container{
+            max-width: 100%;
+            display: inline-flex;
+            flex-direction: column;
+            padding: 20px;
+            text-align: justify;
+            font-size: 25px;
+            border: 5px solid red;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #DDD;
+            color: black;
+            text-shadow: rgb(12, 9, 9) 0px 2px 2px;
+        }
+     
+    </style>
+</head>
+<body>
+        <div class="container">
+            Crie um programa que leia um número e mostre os números pares até esse número,
+            inclusive ele mesmo. Exiba todos os números pares até o valor de entrada,
+            sendo um em cada linha.
+        </div>
+        
+        <script>
+            let num = prompt('Digite um número: ');
+            let numList=[];
+            for(i=1; i<num; i++){
+                if (i%2===0){
+                    numList.push(i);
+                }
+            }
+            let converte =numList.toString(" \n ");
+            let formata = numList.join(", ");
+            document.write('<div class="container">',
+                                 'A conversão fica: ',converte,'<br/>',
+                                 ' O valor formatado fica: \n',formata, '<br/>',
+                            ' </div>');
+        </script>
+</body>
+</html>

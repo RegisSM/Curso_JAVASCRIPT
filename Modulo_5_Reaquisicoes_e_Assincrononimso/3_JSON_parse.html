@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JSON=> JAVASCRIPT OBJECT NOTATION
+        // ou seja, é um objeto que faz a comunicação entre requisiçoes,
+        // tanto para guarda informaçoes, quanto enviar e receber informaçoes nestas requisiçoes
+        
+        // jeito errdo de criar JSON:
+        "{'nome':'Regis','idade':90,'caracteristica':['sorridente','maravilhoso','top'] }"
+        
+         //Jeito certo de criação de um JSON:
+        '{"nome":"Regis","idade":90,"caracteristica":["sorridente","maravilhoso","top"] }'
+       
+        
+        // Usando o JSON.Parce na prática
+        console.log('='.repeat(20)+'Primeiro Exemplo:'+'='.repeat(20));
+        let pessoa= JSON.parse('{"nome":"Regis","idade":90,"caracteristica":["sorridente","maravilhoso","top"] }');
+        console.log(pessoa.caracteristica);
+        console.log('========================================================\n')
+    
+      
+        // outro exemplo:
+        console.log('='.repeat(20)+'Segundo Exemplo:'+'='.repeat(20));
+        let p='{"nome":"Joao","idade":90}' //JSON em formato não valido
+            p=JSON.parse(p); //Transforma o JSON em formato de string para um JSON em um objeto real.
+            console.log(p.nome);
+        console.log('========================================================\n')
+
+        //exercicio
+        let d = JSON.parse('true'); 
+        console.log(d);
+    </script>
+</body>
+</html>

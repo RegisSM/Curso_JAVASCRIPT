@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <div>
+        <form method="GET" action="">
+            <fieldset>
+                <label for=""> Digite um numero: entre 1 a 7:
+                    <input  type="number" value="" name="age" id="diaS" required />
+                </label>
+            
+            <button required onclick="diaSemana()">Click para conferir</button>
+            <button onclick="limpar()">limpar input</button>
+        </fieldset> 
+        </form>  
+        
+     
+    </div>
+    <div id="resposta"></div>
+    <script>
+        if (document.getElementById('diaS').requestPointerLock=''){
+            alert('informe um valor');
+        }else{
+            function diaSemana(){
+            let dia = document.getElementById('diaS').value;
+            let diaNome='';
+            switch(dia){
+                case '1':
+                    diaNome='Segunda-Feira';
+                    break;
+                case '2':
+                    diaNome='Terça-Feira';
+                    break;
+                case '3':
+                    diaNome='Quarta-Feira';
+                    break;
+                case '4':
+                    diaNome='Quinta-Feira';
+                    break;
+                case '5':
+                    diaNome='Sexta-Feira';
+                    break;
+                case '6':
+                case '7':
+                    diaNome='Final de semana';
+                    break;
+                default:
+                    diaNome='um dia que não bate com os sete dias da semana. Por favor tente novamente!';
+                    break;
+                }
+                document.getElementById('resposta').innerHTML='Hoje é: '+ diaNome;
+        }
+       function limpar(){
+            document.getElementById('diaS').value="";
+            document.getElementById("resposta").innerHTML='';
+        }
+        }
+       
+    </script>
+</body>
+</html>

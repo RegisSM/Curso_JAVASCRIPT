@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+     <div class="demo"></div>
+     <script>
+            console.log('============ Ex1: Transforma a string em um array ============');
+            let lista= ['Ovo','Farinha','Corante','Massa'];
+            let resposta= lista.toString(); // transforma a string em um array e acresenta a ','
+            console.log('Itens da lista:\n',resposta );
+            console.log('============ Fim ============');
+
+            console.log('============ Ex2: Transforma o array em string ============');
+            let lista2= ['Ovo','Farinha','Corante','Massa'];
+            let resposta2= lista2.join('=>'); // transforma o array em string e separa as 
+             //coisa quando informado o paramentro
+             // ex: se add  '=>' sera acresentado entre palavras
+            console.log('Itens da lista:\n',resposta2 );
+            console.log('============ Fim ============');
+
+            
+            console.log('============ Ex3: Para localizar a posição do array ============');
+            let lista3= ['Ovo','Farinha','Corante','Massa'];
+            let resposta3= lista3.indexOf('Corante'); 
+            if  (lista3.join !=-1){ console.log('Este item esta na posição:\n',resposta3); 
+            }else{ console.log('Esta variavel não esta no cadastro!'); }
+            console.log('============ Fim ============');
+
+            console.log('============ Ex4: Exclui a posição final do array ============');
+            let lista4= ['Ovo','Farinha','Corante','Massa'];
+            let resposta4= lista4.pop(); 
+            console.log('O item:',resposta4,' que estava na ultima posição foi deletado');
+            console.log('Logo temos: ',lista4); 
+            console.log('============ Fim ============');
+
+            console.log('============ Ex5: Exclui a posição inicial do array ============');
+            let lista5= ['Ovo','Farinha','Corante','Massa'];
+            let resposta5= lista5.shift(); 
+            console.log('O item:',resposta5,' que estava na primeira posição foi deletado');
+            console.log('Logo temos: ',lista5); 
+            console.log('============ Fim ============');
+
+            console.log('============ Ex6: Adiciona um item ao array  ============');
+            let lista6= ['Ovo','Farinha','Corante','Massa'];
+            let resposta6= lista6.push('Arroz'); 
+            console.log('O item:',resposta6,' foi adicionado a lista');
+            console.log('Logo temos: ',lista6); 
+            console.log('============ Fim ============');
+
+            
+            console.log('============ Ex7: Altera um item do array  ============');
+            let lista7= ['Ovo','Farinha','Corante','Massa'];
+            posicao= lista7[0];
+            lista7[0]='Arroz'; 
+            console.log('O item:',posicao,'foi altereado pelo item: ',lista7[0]);
+            console.log('Logo temos: ',lista7); 
+            console.log('============ Fim ============');
+
+                        
+            console.log('============ Ex7:Adiciona um item a mais no array ============');
+            let lista7_1= ['Ovo','Farinha','Corante','Massa'];
+            resu=lista7_1[4]='Macarão'; 
+            console.log('O item:',resu,'foi adicionado na lista');
+            console.log('Logo temos: ',lista7_1); 
+            console.log('============ Fim ============');
+
+            console.log('============ Ex8: Outra maneira de add elemento ============');
+            //esta função não é recomendada. Melhor utilizar o push para add itens
+            let lista8= ['Ovo','Farinha','Corante','Massa'];
+            let add=lista8[lista8.length]='Feijão'; 
+            console.log('o item',add,' foi adicionado!')
+            console.log('Logo temos: ',lista8); 
+            console.log('============ Fim ============');
+
+
+            
+    
+     </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o CSS</title>
+    <style>
+        .li{
+            background-color: #f00;
+            color: #fff;
+        }
+        .botao{
+            font-size: 25px;
+            padding: 10px 20px;
+        }
+        .verde{
+            background-color: green;
+            color: #fff;
+        }
+        .azul{
+            background-color: blue;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+     <h1>Olá Java Script</h1>
+    <div id="teste">
+        <ul>
+            <li class="li">Primeiro item</li>
+            <li>Segundo item</li>
+        </ul>
+        <strong>Testando 1, 2, 3...</strong>
+    </div>
+    <div id="teste2">
+        <ul>
+            <li>Terceiro item</li>
+            <li>Quarto item</li>
+        </ul>
+    </div>
+    <button class="botao azul" onclick="clicou()">Fazer Ação</button>
+    <script>
+        function clicou(){
+            /* Comandos importantes:
+                • classList.contains('vr') => verifica se existe esta classe.
+                • classList.toggle('a') => se a classe selecionada existir, ela será removida, caso contrario será adicionada.
+                • classList.replace('btbbt', 'asdasd') => remove o primeiro parâmetro e add o segundo.  */
+
+            const li = document.querySelector('li');
+            const botao = document.querySelector('button');
+            console.log(botao.classList); // mostra um array de qtos elementos tenho
+           
+        
+                /* Primeira forma:
+                     if(botao.classList.contains('azul')){
+                        botao.classList.remove('azul');
+                        botao.classList.add('verde');
+                    }else{
+                        botao.classList.add('azul');
+                        botao.classList.remove('verde');
+                } */
+                
+                /*Fazendo o mesmo procedimento acima, do jeito mais simplificado possivel. Segunda Forma  */
+                    botao.classList.toggle('azul'); // se exitir remove,caso contrario adiciona.
+                    botao.classList.toggle('verde');// se não existir cria uma classList
+               
+                /*Fazendo o mesmo procedimento acima, com um comando simplificado. Tereceira Forma 
+                    if (botao.classList.contains('azul')){
+                        botao.classList.replace('azul','verde');
+                    }else{
+                        botao.classList.replace('verde','azul');
+                    } */
+            }
+    </script>
+</body>
+</html>

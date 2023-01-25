@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+  <div class="demo"></div>
+  <script>
+
+    console.log('============ Ex1: mapeia um vetor ============');
+    let lista1= [45,4,9,16,25];
+    let lista2=[];
+    lista2=lista1.map(function(item){ // . map => Pega dados de um vetor e cria outro
+      return item*2;
+    });
+    let resposta1= lista2; 
+    console.log('Lista Original: \n',lista1,
+    '\nLista onde cada posição é multiplicada por 2:\n',resposta1 );
+    console.log('======================== Fim ========================');
+
+    
+    console.log('============ Ex2:Mesma coisa, mas usando o for ============');
+    let lista1_For= [45,4,9,16,25];
+    let lista2_For=[];
+    for(let i in lista1_For){
+      lista2_For.push(lista1_For[i]*2);
+    }
+    let resposta2= lista2_For; 
+    console.log('Lista Original: \n',lista1_For,
+    '\nLista onde cada posição é multiplicada por 2:\n',resposta2 );
+    console.log('======================== Fim ========================');
+
+    console.log('============ Ex3:Filtrar determinadas coisa no array ============');
+    let lista3= [45,4,9,16,25];
+    let lista3_1=[];
+    lista3_1 = lista3.filter(function(item){ //.filter =>Filtrar determinadas coisa no array
+      if (item < 20){
+        return true;
+      } else{
+        return false;
+      }
+    });
+    console.log('Dado um array abaixo:\n',lista3,'\nOs valores menores que 20 são:',lista3_1);
+    console.log('======================== Fim ========================');      
+    
+    console.log('============ Ex4:Verifica se a codição sera valida para todos elementos ============');
+    let lista4= [45,4,9,16,25];
+    let lista4_1=[];
+    lista4_1 = lista4.every(function(item){ // . every => Informa true apenas se todos os itens forem validos
+      if (item > 3){
+        return true;
+      } else{
+        return false;
+      }
+    });
+    console.log('Dado um array abaixo:\n',lista4,'\nTodos os numeros são > que 3 ?',lista4_1);
+    console.log('======================== Fim ========================');        
+
+    console.log('============ Ex5:Verifica se a codição sera valida para todos elementos ============');
+    let lista5= [45,4,9,16,25];
+    let lista5_1=[];
+    lista5_1 = lista5.some(function(item){ // .some: Informa true apenas se todos os itens forem validos
+  /*     if (item < 10){
+        return true;
+      } else{
+        return false;
+      } */
+      //uma maneira de fazer uma unica verificação em apenas uma linha. sendo ela:
+      return(item<10)? true:false;
+    });
+    console.log('Dado um array abaixo:\n',lista5,'\nAlguns items deste array são < que 10 ?',lista5_1);
+    console.log('======================== Fim ========================');       
+
+
+  </script>
+</body>
+</html>

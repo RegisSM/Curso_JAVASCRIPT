@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <h1> Função troca de campo</h1>
+    <h3 id="Titulo"> Seja bem vindo(a)!</h3>
+    <label for="">
+        <input  id="campo" type="text" name="usuario" value="Nome do usuario"/>
+    </label>
+    
+    <br/>
+    <h1> Insira os valores de x e y dentro do console para somar</h1>
+    <br/>
+    <label for="">O resultado da soma é: 
+        <input type="text" id="campo1" name="n1"/>
+    </label> 
+    <br/>
+    <h1>Aqui é feito um retorno de uma função de subtração.</h1>
+   <label for="">  O resultado da subtração de: 10 - 15 = 
+       <input type="text" id="sub" name="n1"/> 
+    </label>
+  
+    <!--<input type="text" id="campo2" name="n2" placeholder="Digite um numero"/>
+        <button onclick="somar();" id="somar">Somar</button> -->
+    <script>
+        
+        function alterar(Titulo){ /*função que retorna uma string para o a pagina e o input*/
+            document.getElementById('Titulo').innerHTML=Titulo;
+            document.getElementById('campo').value = Titulo;
+        }
+        alterar("Receba este exemplo!"); /*Chama a função, para ser execultada */
+
+       
+        function somar(x,y){ /*criada para mostrar exemplo de paramentro*/
+            let total =x + y;
+            document.getElementById('campo1').value= total;
+        }
+
+        function subtracao(x,y){ /*Criada para retornar valor*/
+            let total = x - y;
+            return total;
+        }
+ 
+        var resultado = subtracao(10, 15); /*Este comando leva dois valores
+                                           para a função subtração */
+        document.getElementById('sub').value= resultado;
+
+    </script>
+</body>
+</html>

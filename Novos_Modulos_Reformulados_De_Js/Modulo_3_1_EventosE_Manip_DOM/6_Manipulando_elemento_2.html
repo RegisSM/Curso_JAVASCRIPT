@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <h1>Olá Java Script</h1>
+        <div id="teste">
+            <ul>
+                <li>Primeiro item</li>
+                <li>Segundo item</li>
+            </ul>
+            <strong>Testando 1, 2, 3...</strong>
+        </div>
+        <div id="teste2">
+            <ul>
+                <li>Terceiro item</li>
+                <li>Quarto item</li>
+            </ul>
+        </div>
+        <button class="botao" onclick="clicou()">Clique aqui</button>
+        
+        
+        <script>
+                function clicou(){
+
+                    /* Obs importante:
+                    children[0].append('....') => add um conteúdo a mais não altera o conteúdo existente
+                    children[0].innerHTML+="('....')" => altera todo conteúdo, mas ira clonar o existente e add o que foi codificado 
+                    Basicamente ele some da memoria e é add novamente.
+                    Logo, o append não consegue usar tag's HTML, apenas ler como texto, caso seja usado como no exemplo acima
+                    */
+                    const teste = document.querySelector('#teste');
+                    const ul = document.querySelector('ul');
+
+                    ul.children[0].append(' (conteúdo adicionado atravéz do append)');
+
+                    let novoLi= document.createElement('li');
+                    novoLi.innerText="Novo Item =>  incrementado ao html atravéz do appendChild";
+                    ul.append(novoLi);
+
+
+                    let primeLi=document.createElement('li')
+                    primeLi.innerText="Novo Item =>  incrementado ao html atravéz do prependi";
+                    /* prepend => add um texto no começo da lista */
+                    ul.prepend(primeLi);
+                }
+        </script>
+</body>
+</html>

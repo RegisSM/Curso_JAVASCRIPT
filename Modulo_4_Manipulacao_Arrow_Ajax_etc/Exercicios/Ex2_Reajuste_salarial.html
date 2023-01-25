@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="texto">Exercicio Reajuste Salarial</h2> <hr>
+
+    <input type="text" id="teste" placeholder="salario [Exercicio Pratico]"/>
+    <input type="text" id="teste2" placeholder="Reajuste em %"/>    
+    <button onclick="teste()">Troca titulo</button>
+    <button onclick="teste2()">Testar-2</button>
+    <button onclick="teste3()">Exercicio Pratico</button>
+    <script>
+            function teste(){
+               let texto='';
+               let n=10.654172;
+               let res= n.toFixed(2);//arredonda 
+               document.querySelector('#texto').innerHTML= 'Reajuste Salarial'; 
+            }
+
+            function teste2(){
+              let x=document.querySelector('#teste').value;
+              let y=document.querySelector('#teste2').value;
+              let texto='';
+              let calcula=(x*y)/100;
+              let resp = parseFloat(x) + parseFloat(calcula);
+              document.write('O valor R$'+x+' com Reajuste de '+y+'% é = R$'+resp.toFixed(2)); 
+            }
+
+            function teste3(){
+                
+            }
+    </script>
+</body>
+</html>

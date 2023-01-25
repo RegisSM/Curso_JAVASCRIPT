@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interação com Array</title>
+</head>
+<body>
+    <script>
+        //por padrão o filter tem 3 passagem por parâmetro sendo elas filter(value, index , array)
+        let fruits =['Banana','Laranja','Maça','Pêra'];
+        fruits.push('Uva');
+        console.log(fruits);
+        // Usando o "fileter
+        let bigFruits= fruits.filter((item)=>{ // a fiter gera um novo array
+            return item.length >3;
+        });
+        console.log(bigFruits);
+     
+        //Usando o "includes"
+        if (fruits.includes('Uva')){
+            console.log('Tem uva no array');
+        }else{console.log('Não possui uva no array')}
+
+
+        // Usando o "Every"
+        let Ev = fruits.every((value)=>{
+            return value.length > 4;
+        });
+        if (Ev){
+            console.log('Todos são maior que 3');
+        }else{
+            console.log('Há um ou mais itens que não é maior 3');
+        }
+
+        // usando o "some"
+        let SOME= fruits.some((buscaVetor)=>{
+            return buscaVetor.length === 6
+        })
+        if(SOME){console.log('A pelo menos um item igual a 6')}
+        else{console.log('Nenhum item da lista igual 6')}
+    </script>
+</body>
+</html>

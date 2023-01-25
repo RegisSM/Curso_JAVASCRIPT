@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 funçõs parte 1</title>
+    <style>
+      /*       h1{
+                border: ;
+            } */
+    </style>
+</head>
+<body>
+        <div id="exemplo"> Regis 
+            <div class="lista">
+                <ul>
+                    <li>Arroz</li>
+                    <li>Feijão</li>
+                    <li>Macarrão</li>
+                </ul>
+            </div>
+
+            <div class="lista">
+                <ul>
+                    <li>Agua</li>
+                    <li>Refrigerante</li>
+                    <li>Cerveja</li>
+                </ul>
+            </div>
+            <button> Botao Bunitão</button>
+           
+            <input type="text" name="Email" placeholder="Digite seu e-mail"/>
+            <input type="text" name="Telefone" placeholder="Digite seu Telefone">
+            
+            <script>
+                /*pega o elemento pelo id*/
+                document.getElementById('exemplo')
+
+                /*Pega os elementos pelo nome da classe*/
+                document.getElementsByClassName('lista')[1].innerHTML='Item alterado! ta ok?' 
+                
+                let listas = document.getElementsByClassName('lista');
+                let i='';
+                for (let i in listas){ // Na primeira iteração do for in o i vale 0,
+                                       //(porque a primeira chave do array é 0),  na segunda 1, e na terceira 2.
+                    listas[i].style.color='#000080';
+                    listas[i].style.backgroundColor='#3bfdcc';
+                    listas[i].style.border='#000';
+                }
+                
+                
+                /*Pega os elementos pelo nome da tag*/
+                document.getElementsByTagName('button')
+                
+                /*Pega os elementos de acordo com o que for
+                informado no paramentro name do item*/
+                document.getElementsByName('email')
+            </script>
+        </div>
+</body>
+</html>

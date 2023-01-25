@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distâncias e scroll suave</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box; /*ajusta de acordo para tudo fica
+            na proporcao do width informado */
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color:rgb(247, 240, 240) !important;
+
+            
+        }
+        .texto{
+            width: 700px;
+            height: 1500px;
+            text-align: justify;
+            padding-top: 10px;
+            color: #FFF;
+            font-size: 35px;
+            padding-left: 20px;
+            padding-right: 20px;
+            background-color:red;
+            border: 2px solid #CCC;
+            overflow: auto; /*comano para deixar com barra de scroll caso necessario*/
+        }
+        .Scroll-Button{
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            border: 2px solid red;
+            position: fixed;
+            right: 20px;
+            bottom: 10px;
+            z-index: 999;
+        }
+        .direita, .esquerda{ background-color: red; width: 18px; height: 2px;}
+        .direita{
+            margin-right: -2px;
+            transform: rotate(-30deg);
+        }
+        .esquerda{
+            margin-left: -2px;
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+    <body>
+        <div class="texto">
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sagittis egestas aliquam id fringilla luctus dictum leo, purus tempus lectus habitasse quam at. Orci consequat adipiscing varius egestas interdum mi non vivamus suspendisse faucibus pulvinar ridiculus, iaculis ultrices nam justo nullam aenean amet magna ante lobortis pharetra. Mollis pellentesque et luctus amet nibh ut varius, inceptos neque quisque aliquam sed conubia, eleifend nullam imperdiet netus venenatis suspendisse. Hac suspendisse viverra pharetra cras platea class, himenaeos tellus enim risus elementum, senectus fusce magna consectetur volutpat. Posuere pretium duis orci non rhoncus integer lectus id, morbi pharetra suspendisse viverra ante amet egestas mus, tempus nisl hac sociosqu a dis luctus. Fermentum fringilla placerat mi sit vitae mattis nec accumsan massa tempor pretium, efficitur rhoncus mauris luctus pulvinar aptent habitasse donec hendrerit. Sollicitudin netus himenaeos placerat nibh nec consequat tellus quam, phasellus auctor donec euismod litora egestas nisi taciti, bibendum ligula arcu dictum vel fringilla congue. Ad mus pulvinar gravida fames cursus rutrum, orci proin velit viverra.</p>
+        </div>
+        
+        <div onclick="SubirTela()" class="Scroll-Button">
+            <div class="direita"></div>
+            <div class="esquerda"></div>   
+        </div>
+
+        <script>
+
+        //Usados para elementos expecificos:    
+            //Este comando mostra a posição em que o scroll esta, verticalmente. 
+            document.querySelector('.texto').scrollTop
+            //Este comando mostra a posição em que o scroll esta, horizontalmente. 
+            document.querySelector('.texto').scrollLeft
+
+        //Usado na pagina inteira: 
+            //para saber o scroll vertical usa-se:
+            window.scrollY
+
+        //comando usado para sub a tela para scroll na posicão 0
+            document.querySelector('.texto').scrollTo(0,0);
+
+        //Comando usado para sub a tela vertical da pagina inteira na posicao 0
+            window.scrollTo(0,0);
+        //Comando usado para sub a tela horizontal pagina inteira na posicao 0
+        window.scrollTo(0,0);
+
+        //Sobe para o topo de maneira mais suave    
+        function SubirTela() {
+            window.scrollTo({top: 0, left: 0, behavior:'smooth'});
+        }
+
+        </script>
+    </body>
+</html>

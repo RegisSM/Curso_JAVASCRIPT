@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnails com FileReader</title>
+</head>
+<body>
+    <label for="">.
+        <input type="file" name="" id="imagem" accept="image/*">
+    </label>
+    <button onclick="mostrar()">Mostrar</button>
+    <div class="area"></div>
+    <script>
+        // metodo assincrono de criação de Thumbinais com js
+        function mostrar(){
+            let imagem =  document.querySelector('#imagem').files[0];
+            let reader= new FileReader();
+            reader.readAsDataURL(imagem); // usa o parametro para ler a url 
+            //apos ler é necessario execultar um callback para recriar o conteudo da img
+           
+            reader.onloadend = function(){
+               let img= document.createElement('img'); // cria uma img
+               img.src= reader.result; // pega a url e em seguida guarda seu resultado
+               document.querySelector('.area').appendChild(img); 
+            }
+           
+            // o appendChild => pega o elemento img passado por parâmetro e add ao final 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11 de JavaScript</title>
+    <style>
+        .imagem{
+            margin: 0 auto;
+            width: 300px;
+            height: 250px;
+        }
+
+    </style>
+</head>
+<body>
+      <!--O Comando data-x guarda uma informacao separada, onde informa o tipo do animal -->
+    <img class="imagem" src="image/cachorro.jpg" data-TipoAnimal="Cachorro" alt=""/><br/>
+    <!-- Comando abaixo troca a imagem e o nome da figura -->
+    <button onclick="trocarImagem('cachorro.jpg','Cachorro')" > Cachorro </button>
+    <button onclick="trocarImagem('gato.jpg','Gato')">Gato</button>
+    <button onclick="pegarAnimal()">Deseja saber o nome deste animal?</button>
+    
+    <script>    
+           //Primeiro Parametro indentifica o nome do arquivo.
+           //Segundo Parametro identifica O tipo do Animal
+           function trocarImagem(filename, TipoAnimal){
+                //comando abaixo localiza o src da imagem e altera
+                document.querySelector('.imagem').setAttribute('src','image/'+filename); //concatena a pasta junto com o endereço da imagem
+                //o comando abaixo identfica o animal e troca o valor, do parametro, que foi 
+                //apresentando no 2º parametro da função trocarImagem('1º','2º')
+                document.querySelector('.imagem').setAttribute('data-TipoAnimal',TipoAnimal);
+           }
+           function pegarAnimal(){
+            let animal=document.querySelector('.imagem').getAttribute('data-TipoAnimal');
+            alert(`O animal clicado trata-se de um: ${animal}`);
+           }
+
+   
+    </script>
+</body>
+</html>

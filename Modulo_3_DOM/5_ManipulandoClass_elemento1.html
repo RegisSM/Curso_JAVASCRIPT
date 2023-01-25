@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Manipulando class  parte 1</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+            box-sizing: border-box;
+            display: grid;
+            justify-items: center;
+            justify-self: center;
+        }
+        #exemplo{
+            border: 2px solid black;
+            box-shadow: 1px 3px 2px #c8c8c8;
+            display: flex;
+            width: 300px;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons{
+            display: flex;
+            margin: 20px;
+            gap: 10px;
+        }
+        button{
+            display: inline-block;
+        }
+
+        .verde{
+            background-color: #00FF00;
+            color: rgb(190, 36, 36);
+        }
+        .vermelho{
+            background-color: red;
+            color: white;
+        }
+        .preto{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+        <div id="exemplo"> Regis Souza </div>
+        <div class="buttons">
+            <button onclick="verde()"> Verde </button>
+            <button onclick="vermelho()"> Vermelho </button>
+            <button onclick="Preto()"> Preto </button>
+        </div>
+
+
+        <script>
+            function verde(){
+                document.querySelector('#exemplo').classList.remove('vermelho');
+                document.querySelector('#exemplo').classList.remove('preto');
+                document.querySelector('#exemplo').classList.add('verde');
+
+            }
+            function vermelho(){
+                document.querySelector('#exemplo').classList.add('vermelho');
+                document.querySelector('#exemplo').classList.remove('verde');
+                document.querySelector('#exemplo').classList.remove('preto');
+
+            }
+            function Preto(){
+                document.querySelector('#exemplo').classList.add('preto');
+                document.querySelector('#exemplo').classList.remove('verde');
+                document.querySelector('#exemplo').classList.remove('vermelho');
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <h1 id="Titulo"> Seja bem vindo</h1>
+    <label for="">Digite um numero:
+        <input id="campo1" name="Number1" type="text"/>  <br/>
+    </label>
+    <label for="">Digite outro numero:
+        <input id="campo2" name="Number2" type="text"/>  <br/>
+    </label>
+    <button onclick="teste2()">Somar</button> <br/>
+    <div class="resposta">_______________________</div>
+    <script>
+            function teste2(){
+                let x=document.querySelector('#campo1').value;
+                let y=document.querySelector('#campo2').value;
+                let texto='';
+                let calcula=Number(x)+Number(y);
+                document.write('Resposta:\n'+x+
+                ' + '+y+' é = '+calcula);
+                
+             return calcula;
+            }
+            document.getElementsByClassName(".resposta").innerHTML= document.write('Resposta:\n'+x+
+                ' + '+y+' é = '+calcula);
+    </script>
+</body>
+</html>

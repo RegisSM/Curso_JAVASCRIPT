@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    background-color: rgb(8, 0, 0);
+}
+.header{
+    height: 100px;
+     width: 100%; /* faz a cor do red aparecer*/
+    background-color: red !important; 
+}
+.slider{
+   /*  flex: 1; */
+    max-width:1500px;
+    width: 100%;
+    height:100vh;
+    display: flex;
+  
+    align-items: center;
+    overflow: hidden; /* esconde o resto da image */
+}
+.Largura--slider{
+    width: calc(100vw * 3);
+    height: 100%;
+    display: flex;
+    transition: all ease 0.3s; /* tempo para passa de um p/outro */
+}
+.img1{
+    background-image: url(images/img1.jpg);
+}
+.img2{
+    background-image: url(images/img2.jpg);
+}
+.img3{
+    background-image: url(images/img3.jpg);
+}
+.slider--item{
+    width: 100vw ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(0, 255, 136);
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    justify-content: center;
+    text-shadow: 0px 5px 5px #333;
+    height: inherit;/* ira herdar a altura */
+}
+/* ================================================ */
+.slider--controls{
+    position:absolute;
+    padding: 5px;
+    z-index: 98;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slider--control{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(51, 51, 51,0.5);
+    justify-content: center;
+    width: 50px;
+    height: 60px;
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+}

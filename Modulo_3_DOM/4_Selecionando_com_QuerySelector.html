@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 funçõs parte 1</title>
+</head>
+<body>
+        <div id="exemplo"> Regis 
+            <div class="lista">
+                <ul>
+                    <li>Arroz</li>
+                    <li>Feijão</li>
+                    <li>Macarrão</li>
+                </ul>
+            </div>
+
+            <div class="lista">
+                <ul>
+                    <li>Agua</li>
+                    <li>Refrigerante</li>
+                    <li>Cerveja</li>
+                </ul>
+            </div>
+            <button> Botao Bunitão</button>
+           
+            <input type="text" name="Email" placeholder="Digite seu e-mail"/>
+            <input type="text" name="Telefone" placeholder="Digite seu Telefone">
+            
+            <script>
+
+
+                /*seleciona a apenas o primeiro da lista*/
+                document.querySelector('.lista') 
+                
+                /*seleciona todos elementos que tiver o nome lista*/
+                document.querySelectorAll('.lista')
+                
+                  /*seleciona a tag button e altera seu nick*/
+                document.querySelector('button').innerHTML='Botão feião'
+
+                /*Usa all para indetificar as duas e em seguida altera a ultima*/
+                document.querySelectorAll('.lista')[1].innerHTML='Alterado!'
+
+                
+                /*Usa se [] dentro do querySelector para preocurar 
+                o elemento name dentro da tag eu acho*/
+                document.querySelector('[name=Telefone]')
+
+                /*pega o elemento pelo id*/
+                document.getElementById('exemplo')
+
+                /*Pega os elementos pelo nome da classe*/
+                document.getElementsByClassName('lista')[1].innerHTML='Item alterado! ta ok?' 
+
+                /*Pega os elementos pelo nome da tag*/
+                document.getElementsByTagName('button')
+
+                /*Pega os elementos de acordo com o que for
+                informado no paramentro name do item*/
+                document.getElementsByName('email')
+            </script>
+        </div>
+</body>
+</html>

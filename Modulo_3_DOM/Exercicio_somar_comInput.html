@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<p>
+    <h1> Função troca de campo</h1>
+    <h3 id="Titulo"> Seja bem vindo(a)!</h3> <br/>
+    <label for="">
+        <input  id="campoa" type="text" name="usuario" value="Nome do usuario"/>
+    </label>
+    
+    <br/>
+    <h1> Isara valores dentro dos inputs</h1>
+    <br/>
+    <input type="number" id="campo1" name="n1" placeholder="Digite um numero"/>
+    <input type="number" id="campo2" name="n2" placeholder="Digite um numero"/>
+    <button id="campo">Somar</button> <p></p>
+    <input type="number" id="r"  value="" placeholder="?"/>
+    <script>
+    
+        document.querySelector('#campo').addEventListener('click',()=>{
+           var c = document.getElementById("campo1").value;
+           var d = document.getElementById("campo2").value;
+          
+            let retorna = soma(c,d);
+            document.querySelector('#r').value=retorna;
+
+            function soma(a,b){
+            let total=(Number(a) + Number(b));    
+            return total; //sera retornado o valor da variavel total que foi armazenado
+        }
+        });
+     
+    
+  
+    
+ /*        var resultado=subComMultiplicacao();
+        console.log('Usando o return, a variavel total passou a retornar o seguinte calculo \n'+
+                    '(10-5) * 3 = '+resultado);
+        
+        
+        function resultado(x,y){
+        
+            let some= x+y;
+             //document.write(resultado);
+             document.getElementById("campo").value= `A soma entre ${x} + ${y} =  ${some}`;
+        } */
+        
+        //resultado(c,d);
+    </script>
+</body>
+</html>

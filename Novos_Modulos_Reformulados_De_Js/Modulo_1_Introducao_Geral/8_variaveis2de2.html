@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variaveis</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        br{
+            padding-bottom:20px;
+        }
+        div{
+            display: inline-flex;
+            padding: 10px;
+            width: 100%;
+            max-width: 800px;
+            line-height: 30px;
+            border-radius: 8px;
+            background-color: black;
+            color: aliceblue;
+            font-size: 25px;
+            text-align: justify;
+            font-weight: 600;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+     <h1>==============================</h1>
+        <div>
+            Resposta:
+            <script>
+               /* var nome = "Regis";
+               /* console.log(window.nome); /*Transferida para o escopo geral do site*/
+               
+               var nome = "Regis"; 
+               if (nome== "Regis"){
+                   let idade = 90;  /*fica disponivel em apenas uma area do codigo*/
+                   console.log(idade);
+                }
+              
+               
+
+               /*obs: a variavel let não pode ser redeclarada 
+                  Ex: let nome='regis'
+                        let nome='joao' /*ira da erro.*/
+               /*obs: mas a variavel let pode ser redefinida como no exemplo abaixo:
+                  Ex que funciona:
+                        let nome= 'regis'
+                        nome='joao' */
+            
+            
+                /*Ex: da const  
+                   const nome = "Regis";
+                   nome= "oloco" /* quando declarado const a variavel não pode ser alterada
+                   console.log(nome); */
+
+               /* Obs: quando declarado const a variavel não pode ser alterada. 
+               A uma exceção para array e objetos.
+               Exemplo de declaração do const para objetos.
+               const nome= {nome:'Regis', sobrenome: 'Souza'};
+               nome.nome = 'joao' */
+               
+               
+               /*agora se utilizar 
+               const nome= {nome:'Regis', sobrenome: 'Souza'};
+               nome={idade:90 hooby:'codigo'}
+               console.log(nome);
+               
+               vai da erro pois a variavel esta sendo toda redefinida.
+               Logo com o var é possivel*/
+              
+            </script>
+        </div>   
+     <h1>==============================</h1>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Posts{
+            display: none;
+            background-color: antiquewhite;
+            width: 1000px;
+            text-align: center;
+            color: brown;
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <button onclick="CarregaPost()">Carregar Posts</button>
+    
+    <div id="Posts"></div>
+    
+    <script>
+/* =========================================================================
+fetch1=> esta função retorna uma promessa. Pode utilizar dois parâmetro:
+1º usa uma url. 
+O 2º é opcional onde: trata-se de um objeto onde, geralmente é informado as configurações da reaquisição
+logo para a reaquisição de formulário exite dois metótodos:  o GET e o POST
+Também existe reaquisção do tipo: puth, delete...
+=================Relembrando:=================
+O método get=> as informações vão ser salvas todas na a 'url'
+O método post=> as informações vão ser salvas internamente, ou seja no corpo da reaquisção
+=============================================================================
+
+
+===============Usando o Async e  await para economisar linhas de codigo==============*/
+    async  function CarregaPost(){
+        document.querySelector('#Posts').style.display='block';
+        document.getElementById('Posts').innerHTML='<br/> Carregando ...';
+        
+        // o await vai espera a promises terminar para continuar
+        let reque= await fetch('https://jsonplaceholder.typicode.com/posts');
+        // o GuardaJson espera o resultado do reque terminar para proseguir com o codigo
+        let GuardaJson= await reque.json(); 
+        montarBlog(GuardaJson); // passa GuardaJason por parametro, execulta a a função
+
+       
+    }
+//=======================================================================================
+
+//===========================Função montar blog=========================================
+       function montarBlog(ListaConteudo){
+        let html ='';
+        // Temos duas maneiras de usar o for sendo elas:
+        // 1ªForma:    for (let i=0; lista.length;i++){}
+        for (let i in ListaConteudo){// 2ª forma.
+            html+='<h3>'+ ListaConteudo[i].title+'</h3>'; // conteudo do titulo
+            html+= ListaConteudo[i].body+'<br/>'; // conteudo do corpo do site
+            html+= '<hr/>';//conteudo para passar um traço
+        } 
+        document.querySelector('#Posts').style.color='blue';   
+        document.getElementById('Posts').innerHTML=html;
+        }
+//=======================================================================================
+     </script>
+</body>
+</html>

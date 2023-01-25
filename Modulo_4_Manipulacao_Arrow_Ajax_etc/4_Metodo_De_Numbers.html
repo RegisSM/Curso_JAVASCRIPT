@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+     <div class="demo"></div>
+     <script>
+            console.log('============ Ex 0 ============');
+            let num= '12345678910';
+            let num2=12345678910;
+            let Transformacao = Number.parseInt(num,10); // garante q sempre ficar na base decimal
+            let Transformaca2 = String(num2);
+            console.log('Dado a string:',num,'\nConvertendo De string para numero temos:',Transformacao);
+            console.log('Dado O Inteiro:',num2,'\nConvertendo De inteiro para string temos:',Transformaca2);
+            console.log('============ Fim ============');
+
+
+            console.log('============ Ex 1 ============');
+            let n= 10.668787541;
+            let resp = n.toString()+5;
+            let abrevia= n.toFixed(2);
+            console.log('Dado o Numero:',n,'Convertendo de interio para string temos:',resp);
+            console.log('abreviação. R$',abrevia);
+            console.log('============ Fim ============');
+           
+            
+            console.log('============ Ex 2 ============');
+            //os comando abaixo iram convertar uma string para um numero
+            let letra='25.3254656565556';
+           
+            ValConc=parseFloat(letra).toFixed(3); // concatena em 3 valor deps da vírgula
+           
+            console.log('Dado o numero:',letra,'...\n',
+            'Logo, o valor concatenado é:',ValConc);
+           
+            // soma o valor que concatenado + 5
+            let converte = (parseFloat(ValConc)+5);
+          
+            
+            //Transforma . para virgula, :
+            let trocapontoPorVirgula= ValConc.replace('.' , ',');
+            console.log('Se transformarmos para o padrao Brasileiro, onde:'
+                        ,'.',' é convertido para' ,',', 
+                        'implicara em :',trocapontoPorVirgula);
+           
+            let TrasformaParaStringNovamente= (converte.toString());
+           
+            let troca= TrasformaParaStringNovamente.replace('.',',');
+            console.log('A soma do valor:', trocapontoPorVirgula, '+ 5 ='
+                         ,troca);
+           
+            console.log('============ Fim ============');
+            
+
+            console.log('============ Ex: 3 ============');
+           
+            // comando para transformar em reais:
+            let valor=10000000000
+            let res = valor.toLocaleString('pt-br',{style:'currency', currency:'brl'});
+            console.log('O valor convertido em reais é de: ',res);
+           
+            console.log('============ Fim ============');
+           
+           
+            // Introdução ao number:
+            /*
+ 
+            */
+            
+            /* Ex 1: Esse exemplo define um numberObject com um valor numérico 100.
+            Para obter o valor primitivo de um objeto Number, use o método valueOf(),
+            conforme a seguir: */
+            
+            console.log('============ Ex: 4 ============');
+            var numberObject= new Number(100);
+            console.log(numberObject.valueOf());//100
+            
+            /* Ex 2: Nesse exemplo o aNumber possui um valor primitivo 10, 
+            portanto o método toString() retorna 10 no sistema decimal.
+            No entanto, o exemplo a seguir retorna o formato binário da variável aNumber. */
+            var aNumber= new Number(10);
+            console.log('o formato binário da variável aNumber é: ',aNumber.toString(2));//10
+            
+            /* Agora, Se você chamar um método em um valor numeral primitivo, 
+            o JavaScript vai converter em um objeto Number temporariamente.
+            Por exemplo: */
+            console.log('============ Fim ============');
+
+
+
+     </script>
+</body>
+</html>

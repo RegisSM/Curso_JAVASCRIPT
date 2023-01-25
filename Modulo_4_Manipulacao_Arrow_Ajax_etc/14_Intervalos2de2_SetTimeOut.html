@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+            padding: 0;
+        box-sizing: border-box;}
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height:100vh;
+            background: #121312;
+            gap: 10px;
+        }
+        .Timer{
+            text-align: center;
+            line-height: 100px;
+            color: aliceblue;
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+        }
+        .botao{
+            display: flex;
+            gap:  10px;
+            color: aliceblue;
+            font-size: 30px;
+            flex-direction: row;
+        }
+        button{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Timer"></div>
+        <div class="botao">
+            <button onclick="rodar(), Horario()"> Iniciar </button>
+            <button onclick="parar()"> Parar </button>
+        </div>
+    <script>
+        let timer;
+        let relogio;
+       
+        function Horario(){
+             setInterval(function() //roda infinitamente, caso o desenvolvedor não o parar.
+            {
+                let tempo= new Date();
+                let hora= ('00'+tempo.getHours()).slice(-2);
+                let minuto=('00'+tempo.getMinutes()).slice(-2);
+                let segundo=('00'+tempo.getSeconds()).slice(-2);    
+                document.querySelector('.Timer').innerHTML=hora+':'+minuto+':'+segundo;
+            },1000);   
+        }
+
+        function rodar(){
+        // o setTimeout Roda uma única vez, ou seja, ele espera o intervalo terminar
+        // e em seguida roda a função.
+           timer= setTimeout(function()
+                        {
+                          document.querySelector('.botao').innerHTML='Rodou !<br/>';
+                        },2000); 
+        }
+
+        function parar(){
+            clearTimeout(timer);
+        }
+    </script>
+</body>
+</html>

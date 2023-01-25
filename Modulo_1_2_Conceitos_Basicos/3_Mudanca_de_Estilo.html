@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(75, 75, 75, 0.933);
+        }
+        .Div_button .botaoNeo{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 100vh;
+            max-height: 400px;
+           
+            max-width: 800px;
+            justify-content: center;
+            align-items: center;
+            line-height: 50px;
+
+        }
+        .container{
+            display: none;
+            width: 100%;
+            height: 100vh;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            flex-direction: column;
+            background-color: rgba(75, 75, 75, 0.933);
+        }
+        h1{
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+        }
+       
+        .botoes{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        input{
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .azul{ 
+            background-color: #1e9bff;;
+            color: #FFF;
+            font-weight: bold;
+        }
+        .vermelho{
+            background-color: #ff1867;
+            color: #FFF;
+            font-weight: bold;
+        }
+        .verde{
+            background-color:#6eff3e;
+            color: black;
+            font-weight: bold;
+        }
+        #Telefone{
+            display: none;
+            align-items: center;
+            width: 100px;
+            justify-content: center;
+            height: 100px;
+            line-height: 50px;
+            background-color: blanchedalmond;
+        }
+        *{padding: 0;margin: 0;box-sizing: border-box;} 
+        
+        /*Comando para o button neo*/
+        @media screen {
+            .cor--Azul{--cor:#1e9bff;}
+            .cor--Verde{--cor:#6eff3e;}
+            .cor--Vermelho{--cor:#ff1867;}
+            .cor--Braca{--cor:#fff;}
+            .botaoNeo{
+                display: inline-grid;
+                color: #fff;
+                border: 0;
+                margin: 20px;
+                position: relative;
+                background-color: rgb(223, 222, 222);
+                font-size: 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing:  0.1em;
+                padding: 10px 30px;
+                transition: 0.3s;    /*Tempo para ocorrer a animaçao*/
+            }         
+            .botaoNeo:hover{
+                flex-direction: column;
+                letter-spacing: 0.25em; /* largura do espaçamento horizontal */
+                background-color: var(--cor);
+                color: var(--cor);
+                box-shadow: 0 0 30px;
+            }
+            .botaoNeo::before{ /*efeito antes do conteudo*/
+                content: '';
+                position: absolute;
+                inset: 3px; /*insere borda dentro do input*/
+                background: #030303;
+            }
+            .botaoNeo span{
+                position: relative;
+                z-index: 1;
+            }
+            .botaoNeo i{
+                position:absolute;
+                inset: 0;
+                display: block;
+            }
+
+            /*Efeito de borda é para o top*/
+            .botaoNeo i::before{
+                content: '';
+                position: absolute;
+                top: -3.5px;
+                left: 70%;
+                width: 15px;
+                height: 5px;
+                border: 2px solid #fff;
+                background-color: #030303;
+                transform: translateX(50%);
+                transition: 0.5s;
+            }
+            .botaoNeo:hover i::before{
+                width: 20px;
+                border: 2px solid var(--cor);
+                left:5%; /*leva para traz*/
+            }
+        
+            /*Efeito de borda para botton*/
+            .botaoNeo i::after{
+                content: '';
+                position: absolute;
+                bottom: -3.5px;
+                left: 20%;
+                width: 15px;
+                height: 5px;
+                border: 2px solid #fff;
+                background-color: #030303;
+                transform: translateX(-90%); /*ajuda a ter uma posição mais precisa*/
+                transition: 0.5s;
+            }
+        .botaoNeo:hover i::after{
+            width: 20px;
+            border: 2px solid var(--cor);
+            left: 90%; /*leva para frente*/
+        }
+       
+    }
+        
+    </style>
+</head>
+<body> 
+    <div class="Div_button">
+        <button class="botaoNeo cor--Braca" onclick="mostraSite(this)">
+            <span> Se deseja visualizar o site, clique aqui! </span> <i></i> 
+        </button>
+    </div>
+   
+    <div class="container">
+        <h1  id="titulo"> Seja Bem vindo(a)</h1><br/>
+        <label for="">
+            <input id="campo" name="usuario" value="INFORME UMA COR" type="text"/>
+        </label> <br/>
+        <div id="Telefone">3799999999</div><br/>
+        <div onmouseover="oculta(this)" class="botoes">
+            <button class='botaoNeo cor--Azul'  onclick='azul()'> 
+                <span> Azul </span> <i></i> 
+            </button>
+
+            <button class='botaoNeo cor--Verde'    onclick="verde()"> 
+                <span> Verde </span> <i></i>
+            </button>
+            <button class='botaoNeo cor--Vermelho' onclick="vermelho()"> 
+                <span> Vermelho </span> <i></i> 
+            </button>
+            <button class='botaoNeo cor--Braca' id="button" onclick="mostrarTel(this), limpar()" >
+                <span> Telefone </span> <i></i> 
+            </button>
+        </div>
+    </div>
+   
+    <script>
+        function mostraSite(Oculta_Site){
+            Oculta_Site.style.display='none';
+            document.querySelector('.container').style.display='flex';   
+        }
+        function azul() {
+            limpar();
+            document.getElementById('campo').classList.add('azul');
+            document.getElementById('campo').value="Azul";
+        }
+        function verde() {
+            limpar();
+            document.getElementById('campo').classList.add('verde');
+            document.getElementById('campo').value="Verde";
+        }
+        function vermelho() {
+            limpar();
+            document.getElementById('campo').classList.add('vermelho');
+            document.getElementById('campo').value="Vermelho";
+            
+        }
+        function limpar(){
+            document.getElementById('campo').classList.remove('verde');
+            document.getElementById('campo').classList.remove('azul');
+            document.getElementById('campo').classList.remove('vermelho');
+            document.getElementById('campo').value= 'INFORME UMA COR';
+            
+        }
+        function mostrarTel(elemento){
+            elemento.style.display='none';
+            document.getElementById('Telefone').style.display='inline-flex';
+        }
+        function oculta(e){ // usado para ocultar o botao quando se passa o mouse
+            e.style.display='inline-flex';
+            document.getElementById('Telefone').style.display='none'; //oculta a div
+            document.getElementById('button').style.display='inline-block';//oculta o button
+        }
+    </script>
+</body>
+</html>

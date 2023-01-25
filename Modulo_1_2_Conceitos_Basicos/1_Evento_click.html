@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <style>
+        input{
+            padding: 10px;
+            width: 150px;
+        }
+        #campo::placeholder{
+        color: red;        }
+    </style>
+</head>
+<body>
+        <h1 onclick="console.log('Clicou!')" 
+            onmouseout="console.log('Tirou o mouse')" 
+            onmouseover="console.log('Passou o mouse!')"
+            id="titulo">Seja bem Vindo
+        </h1>
+        
+        <label for="">
+            <input id="campo" name="usuario" value="" type="text" placeholder="Nome de usuário"/>
+        </label>
+        <button onclick="clicou()"> Clique em Mim </button>
+        <button onclick="document.getElementById('titulo').innerHTML='Obrigado!'"> Clique em Mim </button>
+        <button onclick="this.innerHTML='Gostou de clicar em mim?'"> clique aqui</button>
+        <script>
+            function clicou(){
+               alert('Olá');
+            }
+        </script>
+</body>
+</html>

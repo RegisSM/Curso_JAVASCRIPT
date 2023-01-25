@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: aliceblue;
+            
+        }
+        h1,h2{
+            text-align: center;
+            margin: 20px;
+        }
+        input{
+            text-align: center;
+            background-color: #666;
+            width: 400px !important;
+            padding: 10px;
+            margin: 5px;
+            font-size: 21px;
+            color: aliceblue;
+            display: flex;
+           
+           flex-direction: column;
+        }
+        input::placeholder{
+            color: aliceblue;
+            background-color: #666;
+            padding: 5px;
+        }
+        .Resp{
+            display: grid;
+            border: 2px solid #666 ;
+            border-radius: 10px ;
+        }
+     
+    </style>
+</head>
+<body>
+    <body>
+        <h1>Fundamentos JavaScrip</h1>
+        <h1>034_Exercicio_Aula_1:
+            <h2>Programe uma função que conte o número de caracteres de uma cadeia de texto</h2> <br/>
+        </h1>
+
+        <input type="text" placeholder="Digite algo" name="carater" id="C"/>
+
+        <div class="Resp">
+
+        </div>
+    </body>
+    <script>
+        /* Programe uma funcao que conte o número de caracteres de uma cadeia de texto
+        Ex: 'ex01Fucao('ola mundo!')' retorna 10 */
+        const  input = document.querySelector('#C');
+        const resposta= document.querySelector('.Resp');
+        function contaCarater(e){
+            if (e.code ==='Enter'){
+                let qtd = input.value.length;//ler qtos tem
+                const  inputResult = document.createElement('input'); //
+                inputResult.placeholder = `A palavra "${input.value}" possui ${Number(qtd)} carateres`;  
+                inputResult.classList.add('resposta');
+                resposta.appendChild(inputResult)
+                console.log(inputResult);
+                input.value='';
+            }
+     
+        }
+        input.addEventListener('keyup',contaCarater);
+    </script>
+</body>
+</html>

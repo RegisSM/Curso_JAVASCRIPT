@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let personagem={
+            nome: 'regis',
+            idade: 90,
+            pais: 'Brasil',
+            olhos: ['preto','azul'],
+            carateristicas:{
+                forca:20,
+                magia:5,
+                stamina:15
+            }
+        }
+        personagem.nome = 'Bixo Piruleta';
+        personagem.carateristicas.forca+=5;
+        console.log(personagem.carateristicas.forca);
+        personagem.olhos.push('verde');
+        console.log(personagem.olhos);
+
+        personagem2={
+            nome: 'regis',
+            idade: 90,
+            carros:[
+                {modelo:'Fiat', cor:['cinza','preto','amarelo']},
+                {modelo:'Ferrari',cor:'vermelho'}
+            ]
+        }
+        console.log(personagem2.carros[0].cor[0]);
+        console.log(personagem2.carros[1].modelo);
+    </script>
+</body>
+</html>

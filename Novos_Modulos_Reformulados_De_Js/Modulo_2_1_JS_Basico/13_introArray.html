@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+         let colors=['blue','red','green'];
+        
+         console.log(colors[1]);
+         console.log('vetor listado:',colors);
+         let RemoveUltimo= colors.pop();
+         let RemovePrimeiro= colors.shift();
+         console.log('Usando o pop =>',RemoveUltimo+' foi removido');
+         console.log('Usando o shift=>',RemovePrimeiro+' foi removido');
+         console.log(colors);
+
+         let lista=['abc',['xx','yy']];
+         console.log(lista[1][0]);
+         //tb funciona fazer assim:
+         let segundaPosition= lista[1];
+         console.log(segundaPosition[0]);
+
+         let ingredientes=['agua','farinha','ovo','corante','sal'];
+         ingredientes.push('leite');
+         let x= ingredientes.length;
+         console.log(ingredientes)
+         console.log(x);
+     </script>
+</body>
+</html>

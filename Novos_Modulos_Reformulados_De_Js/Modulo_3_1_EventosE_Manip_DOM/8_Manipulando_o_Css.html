@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o CSS</title>
+    <style>
+        .li{
+            background-color: #f00;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+     <h1>Olá Java Script</h1>
+    <div id="teste">
+        <ul>
+            <li class="li">Primeiro item</li>
+            <li>Segundo item</li>
+        </ul>
+        <strong>Testando 1, 2, 3...</strong>
+    </div>
+    <div id="teste2">
+        <ul>
+            <li>Terceiro item</li>
+            <li>Quarto item</li>
+        </ul>
+    </div>
+    <button class="botao" onclick="clicou()">Fazer Ação</button>
+    <script>
+        function clicou(){
+            const li = document.querySelectorAll('li');
+            console.log(li);
+            for (var i = 0; i < li.length; i++){
+                li[i].style.backgroundColor='black';
+                li[i].style.fontSize ='20px';
+                li[i].style.color='red';
+            }
+
+        }
+    </script>
+</body>
+</html>

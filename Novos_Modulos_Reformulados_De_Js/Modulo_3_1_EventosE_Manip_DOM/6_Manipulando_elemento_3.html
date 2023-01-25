@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <h1>Olá Java Script</h1>
+        <div id="teste">
+            <ul>
+                <li>Primeiro item</li>
+                <li>Segundo item</li>
+            </ul>
+            <strong>Testando 1, 2, 3...</strong>
+        </div>
+        <div id="teste2">
+            <ul>
+                <li>Terceiro item</li>
+                <li>Quarto item</li>
+            </ul>
+        </div>
+        <button class="botao" onclick="clicou()">Clique aqui</button>
+        
+        
+        <script>
+                function clicou(){                   
+                    const teste = document.querySelector('#teste');
+                    const ul = document.querySelector('ul');
+                    //dentro de createElement é necessario informa a tag de HTML que sera criada
+                    newButton = document.createElement('button');
+                    newButton.innerHTML = 'Botão';
+                    ul.before(newButton);
+
+
+                    //depois da tag ul sera adicionado ao html o seguinte conteúdo
+                    ul.after('Testando 3, 2, 1...');
+
+                    //After => Depois 
+                    //Before => Antes
+                    
+                    let newUl= document.createElement('ul');
+                    ul.after(newUl); // joga o ul no dom após ter execultado o primeiro
+                    for(let i=0; i<5;i++){
+                        let newLi= document.createElement('li');
+                        newLi.innerHTML+=`${i+1}º item adicionado`;
+                        newUl.appendChild(newLi);
+                    }
+                  
+                    
+                }
+        </script>
+</body>
+</html>

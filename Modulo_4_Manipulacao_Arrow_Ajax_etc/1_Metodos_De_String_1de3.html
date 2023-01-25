@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+     <div class="demo"></div>
+     <script>
+         let nome1='Regis De Souza Morais';
+         let nome2='Regis De Souza Morais :)';
+        
+         let result='';
+         let  verifica = nome1.indexOf('Morais');
+         
+         if(verifica > -1){
+             result= 'Achou !';
+             console.log(result,'Logo, a palavra começa na posição:',verifica);
+             console.log('A frase', nome1, 'possui:', nome1.length, 'carateres');
+             console.log('A frase', nome2, 'possui:', nome2.length, 'carateres');
+                  
+         } else{
+             result='Não achou!';
+         }
+        
+         let resultado2= nome2.length  //verifica quantos caracter tem
+         let resultado = nome1.indexOf('Souza'); //indetifica a posição em que a
+                                                // palavra começa. Obs:começa na posição 0
+         console.log(`a frase ${nome1.slice(9,14)} foi escaneada com sucesso,\n e começa na posição:${resultado}`); // informa quantos caracter tem a variavel nome.
+     </script>
+</body>
+</html>
+[JS] - Certo desenvolvedor precisou escrever um trecho de código para formatar uma string
+ de 11 caracteres num cpf tradicional (000.000.000-00).
+  Observe abaixo:
+   let str = "06484966825";
+   let arrStr = str.[A];
+   let strtamplate = `${arrStr[0]}${arrStr[1]}${arrStr[2]}.
+                      ${arrStr[3]}${arrStr[4]}${arrStr[5]}.
+                      ${arrStr[6]}${arrStr[7]}${arrStr[8]}-
+                      ${arrStr[9]}${arrStr[10]}`;
+   console.log(strtamplate); 
+   Marque a opção do método [A] no código acima que seja correto para o retorno funcionar.
+   Observação: O trecho de código acima é apenas para fins didáticos.
+   Na vida real, um código que realize uma operação como esta deve estar dentro de 
+   uma função de escopo local, e dentro da mesma possuir verificações e validações 
+   da string (argumento) que será convertida.

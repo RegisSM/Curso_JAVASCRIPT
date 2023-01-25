@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+  
+    <script>
+     /* função que retorna uma string para o a pagina e o input
+        function alerta(nome){ 
+          alert('Parabéns '+ nome);
+        }
+        
+        var a = prompt("Digite seu nome na caixa abaixo: ");
+        alerta(a); */
+
+        function Valor_e_Referencia(srtVar, arrVar){
+            srtVar ='string Modificada';
+            arrVar[0] ='Array Modificado';
+        }
+        var texto ='Valor Original';
+        var vetor =["Valor Original"];
+        document.write('String antes de chamar a função:',texto,'<br/>');
+        document.write('Array antes de chamar a função: ', vetor[0],'<br/>');
+        //chamando a função
+        Valor_e_Referencia(texto,vetor);
+        document.write('String após chamar a função: ', texto,'<br/>');
+        document.write('Array após chamar a função: ', vetor[0],'<br/>');
+    </script>
+</body>
+</html>

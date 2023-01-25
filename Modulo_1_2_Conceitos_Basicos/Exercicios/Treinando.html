@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        padding: 20px;
+      }
+      img {
+        width: 600px;
+      }
+      .borda {
+        border: 10px solid #999;
+      }
+      .bordaRadius {
+        border-radius: 20px;
+      }
+      .Sombra {
+        box-shadow: 5px 5px 10px black;
+      }
+      .tomImg {
+        filter: sepia(1);
+        background-color: black;
+      }
+      .infor {
+        box-shadow: 5px 5px 10px black;
+        padding: 10px;
+        border: 1px solid #999;
+        width: 600px;
+        display: none;
+        text-align: justify;
+      }
+      .botoes {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        width: 150px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        border: 0;
+        box-shadow: 5px 5px 10px black;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(122, 120, 120);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="portaRetrato">
+            <h1 class=titulo></h1>
+            <img src="falcao.png" alt="águia" title="águia" class="imagem"><br/>
+            <p class="infor"></p><br/>
+        </div>
+        <div class="botoes">
+            <button>Add título Imagem</button>
+            <button>Add borda Imagem</button>   
+            <button>Add bordas redondas</button>
+            <button>Add sombra Imagem</button>
+            <button>Mudar tom da Imagem</button>
+            <button>Add Informação</button>
+            <button>Resetar alterações</button>
+        </div>   
+    </div>
+    <script>
+            document.querySelectorAll('button')[0].addEventListener('click', addTitulo)
+            document.querySelectorAll('button')[1].addEventListener('click', addBorda)
+            document.querySelectorAll('button')[2].addEventListener('click', addBordaRadius)
+            document.querySelectorAll('button')[3].addEventListener('click', addSombra)
+            document.querySelectorAll('button')[4].addEventListener('click', mudarTom)
+            document.querySelectorAll('button')[5].addEventListener('click', addInfor)
+            document.querySelectorAll('button')[6].addEventListener('click', reset)   
+            
+            function addTitulo(){
+            document.querySelector('.titulo').innerHTML = "Ave Majestosa, Águia"
+            }
+            function addBorda(){
+                document.querySelector('.imagem').classList.add('borda')
+            }
+            function addBordaRadius(){
+                document.querySelector('.imagem').classList.add('bordaRadius')
+            }
+            function addSombra(){
+                document.getElementsByClassName('imagem')[0].classList.add('Sombra')
+            }
+            function mudarTom(){
+                document.querySelector('.imagem').classList.add('tomImg')
+            }
+            function addInfor(){
+                document.querySelector('.infor').innerHTML =`A <strong>águia</strong> é o nome comum dado algumas aves de rapina da família Accipitridae, geralmente de grande porte, carnívoras, de grande acuidade visual. O nome é atribuído a animais pertencentes a gêneros diversos e não corresponde a nenhum clade taxonômico. <em>Wikipédia</em>`
+                document.querySelector('.infor').style.display='block'   
+            }
+            function reset(){
+                document.querySelector('.titulo').innerHTML=''
+                document.querySelector('.infor').innerHTML=''
+                document.querySelector('.infor').style.display='none'
+                document.querySelector('.imagem').classList.remove(
+                'borda',
+                'bordaRadius',
+                'Sombra',
+                'tomImg'
+                )
+                
+
+            }
+    </script>
+  </body>
+</html>

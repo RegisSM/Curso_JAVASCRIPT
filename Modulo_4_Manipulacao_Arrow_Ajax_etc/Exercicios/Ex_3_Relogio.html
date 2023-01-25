@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+  
+        .container{
+            flex-direction: column;
+            max-width: 100vw;
+            height: 100vh;
+            background-color: azure;
+            gap: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1,.horario{
+            padding: 10px;
+            max-width: 100%;
+            border-radius: 5px;
+            font-size: 50px;
+            display: inline-flex;
+            color: #FFF;
+            background-color: rebeccapurple;
+            justify-content: center;
+           
+        }
+        .horario{
+            display: inline-flex;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Horas em tempo real</h1>
+        <div class="horario">00:00:00</div>
+    </div>
+       <script>
+        function horas(){
+            let horario= document.querySelector('.horario');
+            let h= new Date();
+            let hora= h.getHours();
+            let minutos= h.getMinutes();
+            let segundos= h.getSeconds('0');
+            let zero='0';
+            if (hora<10){
+                hora= zero+hora;
+            }
+            if (minutos<10){
+                minutos=zero+minutos;
+            }
+            if (segundos<10){
+                segundos=zero+segundos;
+            }
+           
+            horario.innerHTML=`${hora}:${minutos}:${segundos}`;
+        }
+        setInterval(horas,1000);
+      
+
+       </script>
+</body>
+</html>

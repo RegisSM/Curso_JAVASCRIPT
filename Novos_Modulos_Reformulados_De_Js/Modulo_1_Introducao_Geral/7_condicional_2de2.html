@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variaveis</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        br{
+            padding-bottom:20px;
+        }
+        div{
+            display: inline-grid;
+            padding: 10px;
+            width: 800px;
+            line-height: 30px;
+            border-radius: 8px;
+            background-color: black;
+            color: aliceblue;
+            font-size: 25px;
+            text-align: justify;
+            font-weight: 600;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+     <h1>==============================</h1>
+        <div>
+            Resposta:
+            <script>
+                var hora = 18;
+                if ((hora >= 12) && ( hora <18)){
+                    console.log("Boa tarde");
+                }
+                else if (hora == 12 || hora == 18){
+                    console.log("hora do rush");
+                 }
+                else if (hora > 18){
+                    console.log("Boa noite");
+                }
+                else if (hora < 12){
+                    console.log("Bom dia");
+                }
+            </script>
+        </div>   
+     <h1>==============================</h1>
+</body>
+</html>

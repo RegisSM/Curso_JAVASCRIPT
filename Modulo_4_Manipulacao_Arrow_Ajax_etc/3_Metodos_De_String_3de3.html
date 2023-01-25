@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+     <div class="demo"></div>
+     <script>
+            let nome='Regis Souza gosta de Carro';
+            let resultado= nome.replace('Carro','Moto');
+            // replace recebe dois paramentro onde:
+            // O 1º pesquise por x 
+            //e o 2º substitua por y
+            let maiuscula=nome.toUpperCase(); //deixa em maiuscula
+            let minuscula=nome.toLowerCase();  
+            console.log(nome);
+            console.log(resultado); 
+            // por inquanto ate este conteudo temos duas formas de concaternar sendo elas:
+
+            let concatena1=nome.concat(', entendeu ?'); //acresenta mais coisa na variavel
+            let concatena2= nome +' ENTENDEU?'
+            console.log(concatena2);
+            
+            // O comando abaixo ignora o espaço em branco de alguma variável ex:
+            let Bixo='          Regis Souza           ';
+            let TiraEspaco = Bixo.trim('').length; //ignora o espaço da direita e esquerda,
+            let contaletra = TiraEspaco.length;// e se add length verifica quantas letra tem
+            console.log('O nome: ',TiraEspaco,' possui:',contaletra,'caracteres');
+
+            // Quatro comandos para localizar posição:
+            let name='Sera que o Regis gosta de Carro?';
+            let PrimeiraOpcao= name.charAt(2); // informa qual letra esta nesta posição.
+            let SegudaOpcao = name.substr(2, 3); //informa a possição  e a qtd de strig que deseja guarda
+            let terceiraOpcao=name[2];
+            let QuartaOpcao= name.split(' '); //Transforma a string em array. Muito Utilizada
+            /*  se aplica um espaço dentro do split ex:
+             split(' ') => Onde tem espaço ira criar uma posiçao para aqle conteudo
+             split('') => Cria uma posição para cada letra no vetor*/
+            console.log(QuartaOpcao);
+
+
+            //Obs: Split É MUITO UTILIZADO, É BOM DECORAR
+            // O método trim() divide uma string com base no caractere passado como argumento
+            //Ex de um modo de separa-las por ; veja: 
+            let receita='ovo;massa;corante;farinha';
+            let PontoEvirugula=receita.split(';');
+            console.log(PontoEvirugula);
+     </script>
+</body>
+</html>

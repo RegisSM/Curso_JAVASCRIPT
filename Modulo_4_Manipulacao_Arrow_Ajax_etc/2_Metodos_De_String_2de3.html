@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+     <div class="demo"></div>
+     <script>
+            let nome='Regis De Souza Morais';
+           // let resultado= nome.slice(10, 15); //guarda um pedaço da string
+           let resultado = nome.slice(10) ;// ira guarda tudo que vier a partir da posição 6
+           //let resultado= nome.slice(-6, -1); // começa a contar na ultima frase, esquerda pra direita
+            let resultado2= nome.substring(9, 15); //começa normal em ordem da direita pra esquerda
+            //let resultado3= nome.substr(9,15); // O comando nome.substr(primeiro, segundo)
+            // primero (paramentro): pega a posição inicial, e no 
+            // segundo(paramentro): pega a quantidade de caracteres que deseja guardar.
+            // obs: ele funciona da esqueda para direita, logo podemos utilizar numero negativo para representar a posição inicial  
+            let resultado3= nome.substr(-9,1);
+           
+           
+            console.log('Usando o nome.slice ',resultado);
+            console.log('Usando o nome.substring: ',resultado2);
+            console.log('Usando o nome.substr',resultado3); 
+            // o substr faz tudo que o primeiro e o segundo comando é programado
+     </script>
+</body>
+</html>

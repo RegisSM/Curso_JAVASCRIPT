@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('='.repeat(20)+'Usando em arrays'+'='.repeat(20));
+        let lista=['arroz','feijão','macarrão','Pipoca'];
+        console.log('posição: ',Object.keys(lista));
+        console.log('valor: ',Object.values(lista));
+        console.log('Informa que a 1ª posicao é o index, e a 2ª é o valor:\n',Object.entries(lista));
+        console.log('='.repeat(56)+'\n');
+
+        //usando em objetos
+        console.log('='.repeat(20)+'Usando em objetos'+'='.repeat(20));
+        let pessoa={nome:'Regis',sobrenome:'Souza',idade:'90'}
+        console.log('Seja o objeto:',pessoa);
+        console.log('Com o Object.Keys, o objeto transforma em vetor: ',Object.keys(pessoa));
+        console.log('O value informa os valores: ',Object.values(pessoa));
+        console.log('Informa que a 1ª posicao é o index, e a 2ª é o valor:\n',Object.entries(pessoa))
+        console.log('='.repeat(57)+'\n');
+
+        //exercicio
+        console.log('='.repeat(20)+'Exercício Para Fixar'+'='.repeat(20));
+        let carro={
+            modelo:'Hilux', cor:'Vermelha',ano:'2021',valor:{avista:'200 mil',prazo:'300mil'}
+        }
+        console.log(((Object.values(carro.valor))));//imprime os valores das variaveis
+        console.log(
+            Object.values(
+                Object.keys(carro.valor)
+            )
+        ); //imprime as variaveis
+    </script>
+</body>
+</html>

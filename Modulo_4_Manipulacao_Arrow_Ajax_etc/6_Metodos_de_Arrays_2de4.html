@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1 id="titulo"> Seja Bem vindo as strings do JavaScript</h1>
+     <div class="demo"></div>
+     <script>
+
+            console.log('============ Ex1: Remover um item do array ============');
+            let lista1= ['Ovo','Farinha','Corante','Massa'];
+            lista1.splice(1) /* Paramentro: [1] => Remove todas as posiciçoes posteriores,
+                            inclusive a inforada */
+            let resposta1= lista1; 
+            console.log('Os itens da lista são:\n',resposta1 );
+            console.log('============ Fim ============');
+
+
+            console.log('============ Ex2: Remover um item do array ============');
+            let lista2= ['Ovo','Farinha','Corante','Massa'];
+            lista2.splice(1,2);// Primeiro paramentro: [1] => Encotra a posição informada,
+                              // Segundo paramentro:  [2] => Remove a posição 1 e 2
+            let resposta2= lista2; 
+            console.log('Os itens da lista são:\n',resposta2 );
+            console.log('============ Fim ============');
+
+
+            console.log('============ Ex3: Adicionando o array dentro de outro array ============');
+            let lista3= ['Ovo','Farinha','Corante','Massa'];
+            let lista3_1=['prato','liquidificador','forno'];
+            let resposta3= lista3.concat(lista3_1); 
+            console.log('Os itens da lista são:\n',resposta3);
+            console.log('============ Fim ============');
+
+            console.log('============ Ex3: Ordena o array em ordem alfabetica ============');
+            let lista4= ['Ovo','Farinha','Corante','Massa'];
+            lista4.sort(); //ordena
+            lista4.reverse();// inverte
+          //  let resposta4= lista4;
+            console.log('Os itens da lista ordenado em ordem alfabética são:\n',lista4.sort());
+            console.log('Os itens da lista em ordem inversa são:\n',lista4.reverse());
+            console.log('============ Fim ============');
+
+    
+     </script>
+</body>
+</html>

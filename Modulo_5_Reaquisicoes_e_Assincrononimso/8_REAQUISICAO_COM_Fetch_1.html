@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="CarregaPost()">Carregar Posts</button>
+    <button onclick="loadPosts()" >Jeito professor</button>
+    <div id="Posts"></div>
+    
+    <script>
+/* =========================================================================
+fetch1=> esta função retorna uma promessa. Pode utilizar dois parâmetro:
+1º usa uma url. 
+O 2º é opcional onde: trata-se de um objeto onde, geralmente é informado as configurações da reaquisição
+logo para a reaquisição de formulário exite dois metótodos:  o GET e o POST
+Também existe reaquisção do tipo: puth, delete...
+=================Relembrando:=================
+O método get=> as informações vão ser salvas todas na a 'url'
+O método post=> as informações vão ser salvas internamente, ou seja no corpo da reaquisção
+=============================================================================
+
+
+==========================Guardando dentreo do req============================================*/
+function CarregaPost(){
+        document.getElementById('Posts').innerHTML='<br/> Carregando ...';
+        let req = fetch('https://jsonplaceholder.typicode.com/posts')// apenas com um parâmetro, temos uma reaquisão tipo get
+            req.then(function(resultado){
+                return resultado.json(); // retorna uma promessa do tipo json
+            })
+            .then(function(req){// o json vem para este e aqui, ele é execultado.
+                console.log(req); // mostra o json
+                document.getElementById('Posts').innerHTML='<br/> Foi encontrado '+req.length+' posts.';
+            }); 
+            req.catch(function(erro){console.log('Deu problema!')});
+        }
+//============================================================================================
+
+//============================Jeito que o professor fez====================================
+function loadPosts(){
+    document.getElementById('Posts').innerHTML='Aguarde! Carregando...';
+    fetch('https://jsonplaceholder.typicode.com/comments')
+    .then(function(resultado){
+        return resultado.json();
+    })
+    .then(function(json){
+        console.log(json);
+        document.getElementById('Posts').innerHTML='<br/>'+json.length+' comments foram encontrados ';  
+    })
+}
+    </script>
+</body>
+</html>

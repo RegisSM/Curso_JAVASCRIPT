@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação de array</title>
+</head>
+<body>
+     <script>
+        let fruits=['Maça','Uva','Laranja','Banana'];
+        fruits.sort(); // ordena
+        fruits.reverse();
+        console.log(fruits);
+        //exemplo usando o sort em objeto
+        let cars=[
+            {brand: 'Fiat', year:2022},
+            {brand: 'Bmw',year: 2018},
+            {brand: 'Ferrari', year:2020}
+        ]
+        cars.sort((a,b)=>{ // esta função irar rodar 3 vezes
+            if(a.year>b.year){return 1}
+            else if(a.year<b.year){return -1}
+            else return 0 // entra aq se o ano for igual
+        });
+        console.log(cars); // ordenou o year em ordem cresente
+
+        // outra forma de fazer utlizando uma subtração
+        // Usando em ordem decresente
+        cars.sort((x,y)=>{ // ira rodar 3 vezes
+         return  y.year - x.year // ira verifica se o resultado sera 1, -1 ou 0
+         //onde: 0 => não ira mudar a posição ou
+         // -1 => volta um item da posição ou
+         // 1 => leva o item para frente
+        })
+        console.log(cars); 
+     </script>
+</body>
+</html>

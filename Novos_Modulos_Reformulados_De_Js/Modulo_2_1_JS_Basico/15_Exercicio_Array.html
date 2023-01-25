@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //exercicio 1
+        console.log('==Jeito do professor==');
+        let carros=['bmw','ferrari','mercedes', 'mclaren'];
+        let x=1;
+        console.log(carros[x]);
+        console.log('==========================');
+       
+        jeitoMeu();
+        function jeitoMeu(){ 
+            for (let i=0; i<carros.length; i++){
+                console.log(carros[i].length);
+                let x= carros[i];
+                if (x==='mclaren') {
+                    console.log('Jeito que fiz. Na posição: ', carros.indexOf(x),' possui o Conteúdo:',x);
+                }
+                console.log('não encontrado');
+            }
+        }
+       
+
+        //exercicio 2
+        let comida =['ovo','arroz','feijão'];
+        comida[0]='macarrão';
+        console.log(comida);
+
+        //exercicio 3
+        let c =['bmw','ferrari','mercedes'];
+        c.push('volvo');
+        console.log('Lista atualizada: ',c);
+        //exercicio 4
+       console.log('qtd de itens no array:'+c.length);
+    </script>
+</body>
+</html>

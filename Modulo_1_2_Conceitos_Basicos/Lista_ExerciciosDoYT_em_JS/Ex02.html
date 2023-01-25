@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de 1 a 4</title>
+    <style>
+        .Ex2,.respostaEx2{
+            display: inline-flex;
+            flex-direction: column;
+            margin: 5px;
+            background-color: antiquewhite;
+            color: brown;
+        }
+        
+    </style>
+</head>
+<body>
+        <div class="Ex2">
+            Programe uma função que conte o número de caracteres de uma cadeia
+            de texto. Ex: ex01 funcao('ola mundo!') me retornaria 10
+        </div>
+        <div class="respostaEx2"> </div>
+
+        <script>
+            //================== Exer: 02 ======================
+            function informeValor(){
+               let x=String(window.prompt('Digite uma palavra'));
+               const html='<div>'
+               if (x===""){
+                alert('Não foi informado nenhum valor de caracter!');
+               } else{
+                //let respo= document.write();
+                document.querySelector('.resposta').innerHTML=(`Resposta: A Frase ${x} tem ${x.length} carateres.`);  
+               }
+            }
+            informeValor();
+            //==================== Fim ========================
+        </script>
+</html>

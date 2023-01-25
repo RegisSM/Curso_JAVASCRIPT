@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono:wght@400;600;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.15s ease-in;
+        }
+        body{
+            background: #0f3854;
+            height: 100vh;
+            background: 
+            radial-gradient(ellipse at center, #0a2e38 5%, black 80%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Share Tech Mono',monospace;
+        }
+        #container{
+            width: 320px;
+            height: 80px;
+            color: #daf6ff;
+        text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+        button{width: 75px;
+        font-weight: bold;
+        padding: 10px;
+        background-color: transparent;
+        color: #daf6ff;
+        text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+        border-radius: 5px;}
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="cronometro">00:00:00</div>
+        <div class="botoes">
+            <button onclick="crono()">Iniciar</button>
+            <button>Parar</button>
+            <button>Zerar</button>
+        </div>
+    </div>
+    <script>
+        let data = new Date(0);
+        let timer;
+        let start;
+        let contagemTempo ;
+        function crono(){
+        
+          setInterval(function(){
+            //milis=mils+1; 
+            data.setHours(0,0,0);
+            let hora = ('00'+data.getHours()).slice(-2);
+            let minuto =('00'+data.getMinutes()).slice(-2);
+            let segundo =('00'+data.getSeconds()).slice(-2);
+            contagemTempo=hora+':'+minuto+':'+segundo;
+          
+            document.querySelector('.cronometro').innerHTML=contagemTempo;
+          },1000);
+            
+        }
+ 
+    </script>
+</body>
+</html>

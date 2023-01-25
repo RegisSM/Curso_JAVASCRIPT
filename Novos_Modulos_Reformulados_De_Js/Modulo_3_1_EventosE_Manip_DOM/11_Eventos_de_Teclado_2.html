@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o CSS</title>
+</head>
+<body>
+     <h1>Olá Java Script</h1>
+    <div id="teste">
+        <ul>
+            <li class="li">Primeiro item</li>
+            <li>Segundo item</li>
+        </ul>
+        <strong>Testando 1, 2, 3...</strong>
+    </div>
+    <div id="teste2">
+        <ul>
+            <li>Terceiro item</li>
+            <li>Quarto item</li>
+        </ul>
+    </div>
+    <input type="text" placeholder="Digite algo" ></input>
+    <script>
+
+        /* Obs:
+            se for usar a tela toda ex: Usa o document.queryselector()
+            agora, se tem um item especifico uma variável para guarda-lo, ex: let v= document.queryselector() 
+         */
+
+        //o paramentro 'e' serve para verficar os 'detalhes' do que sera usado no evento
+       function apertou(e){
+        console.log('Detalhe de cada evento: \n', e); // mostra todo o conteudo que pode ser usado junto com o evento
+        console.log('apertou  informa exatamenta qual letra q apertou.', e.code); //informa exatamenta qual letra q apertou.
+        console.log('apertou  informa qual letra q apertou, sem especificar.', e.key); //
+       };
+       function segurou(){
+        console.log('segurou');
+       };
+       function soltou(e){
+        console.log('Tecla solta: ' + e.code);
+        console.log('shift tava precionado ?' + e.shiftKey);
+        console.log('control ?'+ e.ctrlKey);
+        console.log('alt ?' + e.altKey);
+        console.log('\n===================\n');
+       };
+
+       let indetificaInput= document.querySelector('input');
+       indetificaInput.addEventListener('keydown',apertou);
+       indetificaInput.addEventListener('keypress',segurou);
+       indetificaInput.addEventListener('keyup',soltou);
+
+    </script>
+</body>
+</html>

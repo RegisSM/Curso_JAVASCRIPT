@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JSON=> JAVASCRIPT OBJECT NOTATION
+        // ou seja, é um objeto que faz a comunicação entre requisiçoes,
+        // tanto para guarda informaçoes, quanto enviar e receber informaçoes nestas requisiçoes
+        
+        // jeito errdo de criar JSON:
+        "{'nome':'Regis','idade':90,'caracteristica':['sorridente','maravilhoso','top'] }"
+        
+         //Jeito certo de criação de um JSON:
+        '{"nome":"Regis","idade":90,"caracteristica":["sorridente","maravilhoso","top"] }'
+
+
+
+        
+        // Usando o JSON.stringify na prática
+        console.log('='.repeat(20)+'Primeiro Exemplo:'+'='.repeat(20));
+        let pessoa= {nome:"Regis",idade:90,caracteristica:["sorridente","maravilhoso","top"] }
+            pessoa=JSON.stringify(pessoa);// transforma o objeto e string JSON
+        console.log(' transformação de um objeto em string JSON\n',pessoa);
+        console.log('========================================================\n')
+
+        //Usando a string para transformar em JONSN valido
+       console.log('='.repeat(20)+'Segundo Exemplo:'+'='.repeat(20));
+            pessoa=JSON.parse(pessoa) //Transforma o JSON em formato de string para um JSON em um objeto real.
+            console.log('Transformação de um JSON.stringify em um JOSN.parce valido para o objeto.\n',pessoa.nome);
+        console.log('========================================================\n')
+    </script>
+</body>
+</html>

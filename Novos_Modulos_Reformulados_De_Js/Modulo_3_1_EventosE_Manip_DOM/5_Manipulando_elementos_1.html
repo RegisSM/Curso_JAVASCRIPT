@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Elementos 1</title>
+</head>
+<body>
+    <h1>Olá Java Script</h1>
+    <div id="teste">
+        <ul>
+            <li>Primeiro item</li>
+            <li>Segundo item</li>
+        </ul>
+        <strong>Testando 1, 2, 3...</strong>
+    </div>
+    <div id="teste2">
+        <ul>
+            <li>Terceiro item</li>
+            <li>Quarto item</li>
+        </ul>
+    </div>
+    <button class="botao" onclick="clicou()">Clique aqui</button>
+    <script>
+        function clicou(){
+          const  teste =  document.querySelector('#teste');
+          
+          //entra dentro da tag teste e seleciona o elemento informado.
+          const  ul = teste.querySelector('ul');
+         
+            //informa um array com vários elementos filhos caso tenha.
+            console.log(teste.children);
+
+            //informa um array com elementos filhos  dos filhos no caso o li.  
+            console.log(teste.children[0].children);
+
+            //informa um array vazio pois a tag strong não possui filhos.
+            console.log(teste.children[1].children);
+            
+            // informa  o conteudo de texto, ex:
+            console.log(ul.innerHTML);          
+
+            ul.children[0].innerHTML='Primeiro item foi <strong>  alterado </strong> !'
+            //Aceita apenas texto, logo, tag's HTML serão consideradas com texto ex:
+            ul.children[1].innerText='Segundo item foi  <strong> alterado! </strong> '
+            
+            // pega o item existente e adiciona mais um elemento na lista ex:
+            ul.innerHTML= ul.innerHTML + "<li>item acressentado com <strong> sucesso! </strong> </li>"; 
+
+
+            // Pega todo elemento, pae e filho ex:
+            console.log(ul.outerHTML);
+        }
+    </script>
+</body>
+</html>

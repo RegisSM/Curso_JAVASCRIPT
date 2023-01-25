@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label for="">Fazer upload de um arquivo:
+            <input type="file" id="arquivo"/> 
+        </label><br/> 
+        <label for="">Fazer upload de vários arquivos:
+            <input type="file" multiple id="arquivos"/> <br/> 
+        </label>
+        <button onclick="enviar()"> Enviar </button>
+        <script>
+          async function  enviar(){
+            let arquivo= document.getElementById('arquivo').files[0];
+            /* obs: 
+            O FormData formatar o corpo da nossa requisição para enviar dados no formato 
+            multipart/form-data (formato que permite o envio de arquivos como imagens, pdfs e etc).
+            
+            FormData.append, serve para adicionar um campo ao objeto criado */
+            
+            let body= new FormData(); // FormData=> Utilizada para envio de arquivos e documentos.
+            
+                body.append('title','Novo Arquivo'); // add um titulo ao arquivo.
+                body.append('arquivo',arquivo);  // add o arquivo ao body
+
+            let reaquisicao= await fetch('https://regissm.com.br/',{
+                method:'POST',
+                body: body,
+                headers:{
+                    /*O content-Type é um cabeçalho que nos usamos para informar para o servidor qual o tipo do corpo 
+                    da nossa messagem. Ex de ser: um texto, um html, um Json, etc..*/
+                    'Content-Type':'multipart/form-data'
+                   /*  o  multipart/form-data (formato que permite o envio de arquivos como imagens, pdfs e etc) */
+                }
+
+            })
+            console.log(arquivo);
+            /* let arquivos= document.getElementById('arquivos').files[0];
+            console.log(arquivos); */
+          }
+        </script>
+</body>
+</html>

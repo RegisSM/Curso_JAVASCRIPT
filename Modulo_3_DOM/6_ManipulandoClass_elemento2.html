@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Manipulando class  parte 1</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            margin-top: 20px;
+            box-sizing: border-box;
+            display: grid;
+            justify-items: center;
+            justify-self: center;
+        }
+        #exemplo{
+            border: 2px solid black;
+            box-shadow: 1px 3px 2px #c8c8c8;
+            display: flex;
+            width: 300px;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons{
+            display: flex;
+            margin: 20px;
+            gap: 10px;
+        }
+        button{
+            display: inline-block;
+        }
+
+        .verde{
+            background-color: #00FF00;
+            color: black
+        }
+        .branco{
+            background-color: white;
+        }
+        .preto{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+        <div class="branco" id="exemplo"> Regis Souza </div>
+        <div class="buttons">
+            <button class="branco" onclick="trocar_cor()"> Dupla cor </button>
+            <button class="branco" onclick="limpar()">Limpar</button>
+        </div>
+
+
+        <script>
+            function limpar(){
+                document.querySelector('button').classList.remove('preto');
+                document.querySelector('button').classList.remove('verde');
+                document.querySelector('button').classList.add('branco');
+                document.querySelector('#exemplo').classList.remove('preto');
+                document.querySelector('#exemplo').classList.remove('verde');
+                document.querySelector('#exemplo').classList.add('branco');
+                
+            }
+            function trocar_cor(){
+                /* Este comando tem finalidade de verifica se é verdadeiro ou falso*/
+                /* o contains => é usado para verificar e o conteudo esta lá*/
+                if (document.querySelector('button').classList.contains('branco') && document.querySelector('button').classList.contains('preto')) {
+                    document.querySelector('button').classList.remove('branco');
+                    document.querySelector('button').classList.remove('preto');
+                    document.querySelector('button').classList.add('verde');
+                } 
+                else{
+                    document.querySelector('button').classList.remove('verde');
+                    document.querySelector('button').classList.add('preto');
+                    document.querySelector('button').classList.add('branco');
+                 
+                }
+                troca_cor__div()
+
+            }
+            function troca_cor__div(){
+                if (document.querySelector('#exemplo').classList.contains('branco') && document.querySelector('#exemplo').classList.contains('preto')){
+                    document.querySelector('#exemplo').classList.remove('branco');
+                    document.querySelector('#exemplo').classList.remove('preto');
+                    document.querySelector('#exemplo').classList.add('verde');
+                } 
+                else{
+                    document.querySelector('#exemplo').classList.remove('verde');
+                    document.querySelector('#exemplo').classList.add('preto');
+                    document.querySelector('#exemplo').classList.add('branco');
+                }
+
+            }
+
+        </script>
+</body>
+</html>

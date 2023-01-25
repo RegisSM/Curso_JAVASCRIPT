@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnails com JS</title>
+</head>
+<body>
+    <label for="">.
+        <input type="file" name="" id="imagem" accept="image/*">
+    </label>
+    <button onclick="mostrar()">Mostrar</button>
+    <div class="area"></div>
+    
+    <script>
+        function mostrar(){  // Metodo sincrono!
+            let imagem= document.getElementById('imagem').files[0]; // passa o conteudo para um objeto
+            let img = document.createElement('img'); // cria uma tag no html
+            img.src= URL.createObjectURL(imagem); // através do parâmetro informado, mostra a imagem dentro da pag
+            console.log(img);
+            img.width=400;
+            document.querySelector('.area').appendChild(img); // pega o elemento img passado por parâmetro e add ao final 
+            //do objeto e chama ele na div .area
+            
+        }
+    </script> 
+</body>
+</html>

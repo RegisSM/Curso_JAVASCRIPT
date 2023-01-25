@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body{  background-color: antiquewhite ;}
+      aside{display: flex;}
+        .container{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+            max-width: 1200px;
+        }
+        .menu-opener { 
+            display: flex;
+            cursor:pointer; }
+        .Menu{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:7px;
+            width: 60px;
+            height: 60px;
+         
+        }
+        .menu-opened{
+            width:200px !important;
+        }
+        .Menu-Area{
+            height: 100vh;
+            padding: 0px;
+            width:0px;
+            overflow-x:hidden; /*oculta os contorno quando o width esta 0*/
+            overflow-y:auto;
+            transition: all ease .5s;
+           
+            background-color: rgb(250, 214, 168) ;
+        }
+        .Menu-Area ul, .Menu-Area li{
+            list-style: none; 
+            margin: 0 auto;
+        }
+        .Menu-Area li{
+            display: flex;
+            list-style: none; 
+            justify-content: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .Menu-Area li:hover {  
+            cursor: pointer;
+            background-color: rgba(54, 182, 16, 0.63);
+        }
+        .barra{
+            padding: 3px 20px;
+            background-color: rgba(54, 182, 16, 0.63);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header> 
+            <h1>Seja bem vindo!</h1>
+        </header>
+        <aside>
+            <div onclick="menuTuggle()"  class="menu-opener">
+                <div class="Menu" >
+                    <div class="barra"></div>
+                    <div class="barra"></div>
+                    <div class="barra"></div>
+                </div>
+            </div>
+            <div class="Menu-Area" >
+                <ul>
+                    <li  onmousedown="desoculta()">Home</li>
+                    <li  onmousedown="desoculta()">Sobre</li>
+                    <li  onmousedown="desoculta()">Contanto</li>
+                </ul>
+            </div>
+        
+        </aside>
+    </div>
+    <script>
+        function desoculta() {
+          var menuArea= document.querySelector('.Menu-Area');
+          
+          if (menuArea.style.width === '200px'){
+                menuArea.style.width ='0';
+            }else{
+                menuArea.style.width ='200px';
+            };
+        }
+            //outro ex para desativar o menu, onde se usa o contains. Veja o ex:
+            function menuTuggle(){
+            var menuArea= document.querySelector('.Menu-Area');
+                    
+                    if (menuArea.classList.contains('menu-opened') == true ){
+                            menuArea.classList.remove('menu-opened');
+                        }else{
+                        menuArea.classList.add('menu-opened');
+                        };
+            };
+
+    </script>
+</body>
+</html>

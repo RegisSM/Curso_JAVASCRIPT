@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <h1>Olá Java Script</h1>
+        <div id="teste">
+            <ul>
+                <li>Primeiro item</li>
+                <li>Segundo item</li>
+            </ul>
+        </div>
+        <div id="teste2">
+            <ul>
+                <li>Terceiro item</li>
+                <li>Quarto item</li>
+            </ul>
+        </div>
+        <input type="text" name="inp" placeholder="Digite algo"  class="inputText input"/>
+        <input type="password" name="inp" placeholder="Digite uma senha"  class="inputPssowd input"/>
+        <button class="botao" onclick="clicou()">Mostrar senha</button>
+        <script>
+            function clicou(){
+                const inputText = document.querySelector('.inputText');
+                const inputPssowd  = document.querySelector('.inputPssowd');
+                const input = document.querySelector('.input');
+                const botao = document.querySelector('.botao');
+                console.log(input.getAttribute('placeholder'));
+                
+
+
+                if(input.hasAttribute('placeholder')){
+                    console.log('Possui placeholder sim!');
+                    // identifica onde esta o placeholder e troca sua informação
+                    inputText.setAttribute('placeholder','Informação adicionada!');
+                    
+                    if (inputPssowd.getAttribute('type')==='text'){
+                        // pega o valor do type e transforma
+                        inputPssowd.setAttribute('type','password');
+                        botao.innerText ='Mostrar Senha';
+                    } else {
+                        inputPssowd.setAttribute('type','text');
+                        botao.innerText='Ocultar Senha';
+                    }
+                    
+                  
+                }else{
+                    console.log('Não possui placeholder!')
+                }
+            }
+
+        </script>
+</body>
+</html>

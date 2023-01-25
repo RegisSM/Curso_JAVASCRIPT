@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{text-align: center;}
+        #demo{
+            display: flex;
+            margin: 0 auto;
+            height: 50%;
+            width: 80%;
+            position: relative;
+            justify-content: center;
+            background-color: wheat;
+        }
+        #demo2{
+            display: flex;
+            margin: 0 auto;
+            height: 50%;
+            width: 80%;
+            position: relative;
+            justify-content: center;
+            background-color: wheat;
+        }
+        ul{
+            display: inline-flex;
+            list-style: none;
+            
+        }
+        ul li{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seja bem vindo</h1>
+    <div id="demo"></div> <br/>
+    <div id="demo2"></div>
+    <script>
+
+        
+       /*   observação importante:
+            for in => usado para percorrer objetos
+            for of => usado para percorrer vetores 
+        */
+
+        /* ================ 1ª opcao do For Loop ===================== */
+        let texto='';
+        for(let i=0; i<=10;i++){ //1ª opcao do For Loop
+            //i=i+1; => i++
+            //console.log(i);
+            texto= texto + i +'<br/>';   
+            console.log(texto);
+        }
+        document.getElementById("demo").innerHTML=texto;
+        /* ========================================================== */
+       
+       
+        /* ================ 2ª opcao do For Loop Array ===================== */
+        let carros=['Ferari', 'Fusca', 'Palio', 'Corolla', 'Lamborghini'];
+        
+        let lista='<ul>';
+        
+        for(let j in carros){ //ira rodas 4 vezes ou seja de 0 a 3
+            lista+='<li>'+ carros[j] +'</li>';
+            console.log(lista);
+        }
+        lista= lista + '</ul>'
+        document.getElementById("demo2").innerHTML=lista;
+        /* ========================================================== */
+        
+
+        /* ================ For in no Objeto ===================== */
+        var objeto = {x:1, y:2, z:3};
+        for(var prop in objeto) {
+             console.log(objeto[prop]);
+            }
+        /* ========================================================== */
+
+      
+        /* ================ For in no vetor ===================== */
+        let obje = [5, 88, 26];
+                for(var n in obje) {
+                    console.log('For in'+obje[n]);
+        }
+        /* ========================================================== */
+
+        /* ================ For of no vetor ===================== */
+        let arrz = [1, 2, 3];
+        for(var n of arrz) {
+            console.log('For of'+n);
+            }
+        /* ========================================================== */
+
+        for(let contador = 0; contador < 50; contador +=2) { //soma de 2 em dois
+        console.log(contador);
+        }
+
+
+    </script>
+</body>
+</html>

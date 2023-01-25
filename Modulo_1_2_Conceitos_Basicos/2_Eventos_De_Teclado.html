@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <h1 id="Titulo"> Seja bem vindo</h1>
+    <label for="">Usando o OnKeyDown. Escolha uma tecla e mantenha a precionada:
+        <input onkeydown="teste1(event)" id="campo1" name="Number1" type="text"/> 
+    </label> <p></p><br/>
+    
+    <label for="">Usando o OnKeyUp. Escolha uma tecla e  precione a:
+        <input onkeyup="teste2(event)" id="campo2" name="Number1" type="text"/>  
+    </label>
+    <script>
+/*  onkeyup=> se manter a tecla pressionada o evento não é registrado. 
+    Só será registrado após ter pressionar a tecla.
+    onkeydow=>  o evento será registrado varias vezes enquanto manter a tecla pressionada.  */
+     
+        function teste1(e){ //A variavel e desta funcão recebera
+                            // o comando event como paramento
+           // e.key;
+            console.log(e);  //imprime o conteudo.
+
+        }   //OBS: localizar o valor 'keyCode' da tecla
+
+
+/* O keyCode é uma propriedade do console onde: podemos verificar O código numérico de uma tecla no teclado de nosso computador. */
+    function teste2(e){
+        //o comando abixo so entrara em vigor se precionar enter dentro do input
+        if(e.keyCode==13 && e.ctrlKey==true){//keyCod==13 => que é a tecla Enter. O crtlKey=> tecla control
+            let texto = document.getElementById('campo2').value;
+            console.log(texto);
+        }
+    
+    }
+    </script>
+</body>
+</html>
